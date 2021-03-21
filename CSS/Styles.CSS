@@ -52,3 +52,15 @@ footer{
     margin: 0;
     padding: 0;
 }
+
+.slider {
+    grid-area: s;
+    font-size: 30px;
+    color: #c4a7e7;
+    align-items: top;
+    justify-self: left;
+}
+
+.slider:hover {
+    color:#f6c177;
+}
