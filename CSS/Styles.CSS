@@ -36,6 +36,7 @@
     align-self: start;
     justify-self: center;
     height:min-content;
+    margin:30px
 }
 
 .default:hover, .save:hover, .delete:hover{
