@@ -72,7 +72,7 @@ footer{
     font-size: 30px;
     color: #c4a7e7;
     align-items: start;
-    justify-self: right;
+    justify-self: end;
     height:min-content;
     width: max-content;
 }
