@@ -21,23 +21,24 @@
 
 .h {
     grid-area: h1;
-    vertical-align: 50%;
 }
 
 .h2 {
     grid-area: h2;
-    vertical-align: 50%;
 }
 
-.default {
+.default, #textbox {
+    display: flexbox;
+    flex-direction: column;
     color:#31748f;
     text-align: center;
     grid-area: b;
-    place-self: center;
+    align-self: start;
+    justify-self: center;
     height:min-content;
 }
 
-.default:hover{
+.default:hover, .save:hover, .delete:hover{
     background-color: #ea9a97;
 }
 
@@ -63,4 +64,61 @@ footer{
 
 .slider:hover {
     color:#f6c177;
+}
+
+.openslider {
+    display: flexbox;
+    grid-area: s;
+    font-size: 30px;
+    color: #c4a7e7;
+    align-items: start;
+    justify-self: right;
+    height:min-content;
+    width: max-content;
+}
+
+.save, .delete {
+    display: flexbox;
+    font-size: 30px;
+    color: #c4a7e7;
+    height:30px;
+    width: 100px;
+}
+
+.save {
+    place-self: center;
+    order:1;
+    grid-area: b;
+    flex-direction:row;
+}
+
+.delete {
+    place-self: center;
+    order:2;
+    grid-area: b;
+    flex-direction:row;
+}
+
+.sliderarea{
+    background-color:#c4a7e7;
+}
+
+@media (max-width: 850px) {
+    .slidernotes {
+        display: flexbox;
+        grid-area: s;
+        align-self: end;
+        justify-self: bottom;
+        list-style-type: none;
+    }
+}
+
+@media (min-width: 851px) {
+    .slidernotes {
+        display: flexbox;
+        grid-area: s;
+        align-self: start;
+        justify-self: center;
+        list-style-type: none;
+    }
 }
