@@ -85,22 +85,15 @@ footer{
     width: 100px;
 }
 
-.save {
-    place-self: center;
-    order:1;
+.savedelete {
     grid-area: b;
-    flex-direction:row;
-}
-
-.delete {
     place-self: center;
-    order:2;
-    grid-area: b;
     flex-direction:row;
 }
 
 .sliderarea{
     background-color:#c4a7e7;
+    grid-area: s;
 }
 
 @media (max-width: 850px) {
