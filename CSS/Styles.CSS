@@ -33,6 +33,10 @@ header {
     text-align: center;
 }
 
+.main {
+    place-self: center;
+}
+
 .slider {
     grid-area: s;
     font-size: 20px;
@@ -69,10 +73,11 @@ li {
 }
 
 .note-area{
-    display:flexbox;
     margin:10px;
-    max-width: 500px;
+    max-width: 700px;
     grid-area: b;
+    justify-items: center;
+    min-width: 300px;
 }
 
 .textinput{
