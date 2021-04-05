@@ -9,22 +9,35 @@
 </head>
 <body>
     <div class="container">
-        <nav class="h">
-            <div href="blank">About</div>
+        <header>
+            <nav class="header">
+                <ul class ="top">
+                    <li>about</li>
+                    <li>docs</li>
+                </ul>
+            </nav>
+        </header>
+        <nav class = "slide">
+            <h1>notes</h1>
+            <ul>
+                <li>note one</li>
+                <li>note two</li>
+                <li>groceries</li>
+                <li>assignment 2, part one</li>
+            </ul>
         </nav>
-        <nav class="h2">
-            <div href="blank">Docs</div>
-        </nav>
-        <button class="default">
-            <p>Add a new note</p>
-        </button>
-        <button class="slider">
-            <p>>>></p>
-        </button>
+        <div class="main">
+            <div class="note-area">
+                <div class="textinput" contenteditable="true"></div>
+                <div class="save-del">
+                    <button id="save">Save</button>
+                    <button id="del">Delete</button>
+                </div>
+            </div>
+        </div>
         <footer>
-            <p>Created by Richard Wang</p>
+            <p>note-ly</p>
         </footer>
     </div>
 </body>
-
 </html>
