@@ -3,7 +3,7 @@
     margin:0;
     padding:0;
     font-family: 'Roboto', sans-serif;
-    font-size: 15px;
+    font-size: 10px;
 }
 
 :root {
@@ -11,117 +11,134 @@
     --main:#e0def4;
     --blue:#31748f;
     --yellow:#f6c177;
+    --pale:#c4a7e7;
+    --orange:#ea9a97;
 }
 .container{
     display: grid;
     grid-template-rows: 5rem 1fr 5rem;
-    grid-template-columns: 0.2fr 0.8fr;
+    grid-template-columns: minmax(0px, auto) 1fr;
     grid-template-areas:
-    'h1 h2'
+    's h'
     's b'
-    'f f';
+    's f';
     width: 100vw;
     height: 100vh;
-    background-color: #e0def4;
 }
 
-.h, .h2 {
-    background-color: #555169;
-    font-size: 40px;
-    font-family: 'Roboto', sans-serif;
-    text-align: center; I've learned a lot from yesturday, and I've delayed my timer
-}
-
-.h {
-    grid-area: h1;
-}
-
-.h2 {
-    grid-area: h2;
-}
-
-.default, #textbox {
-    display: flexbox;
-    flex-direction: column;
-    color:#31748f;
-    text-align: center;
-    grid-area: b;
-    align-self: start;
-    justify-self: center;
-    height:min-content;
-    margin:30px
-}
-
-.default:hover, .save:hover, .delete:hover{
-    background-color: #ea9a97;
-}
-
-footer{
-    grid-area: f;
-    background-color: #f6c177;
-    text-align: center;
+header {
+    grid-area: h;
+    background-color: var(--nav-background);
     font-size: 20px;
+    text-align: center;
 }
 
 .slider {
     grid-area: s;
-    font-size: 30px;
-    color: #c4a7e7;
+    font-size: 20px;
+    background-color: var(--nav-background);
     align-items: top;
     justify-self: left;
+    padding: 10px
 }
 
-.slider:hover {
-    color:#f6c177;
+.slider h1{
+    color: var(--main);
+    font-size: 30px
 }
 
-.openslider {
-    display: flexbox;
-    grid-area: s;
-    font-size: 30px;
-    color: #c4a7e7;
-    align-items: start;
-    justify-self: end;
-    height:min-content;
-    width: max-content;
+.slider ul{
+    overflow: auto;
 }
 
-.save, .delete {
-    display: flexbox;
-    font-size: 30px;
-    color: #c4a7e7;
-    height:30px;
-    width: 100px;
+li {
+    font-size: 2.5rem;
+    color: var(--main);
+    list-style-type: none;
+    margin-right: 3rem;
 }
 
-.savedelete {
-    grid-area: b;
+.slider:hover, li:hover {
+    color:var(--yellow);
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.note-area{
+    display:flexbox;
+    margin:10px;
+    max-width: 500px;
+    grid-area: m;
     place-self: center;
-    flex-direction:row;
 }
 
-.sliderarea{
-    background-color:#c4a7e7;
-    grid-area: s;
+.textinput{
+    height: 150px;
+    border-radius: 5px;
+    font-size: 10px;
+    background-color: var(--blue);
+    caret-color: var(--nav-background);
+    place-self: center;
 }
 
-@media (max-width: 850px) {
-    .slidernotes {
-        display: flexbox;
-        grid-area: s;
-        align-self: end;
-        justify-self: bottom;
-        list-style-type: none;
+button {
+    display: flexbox;
+    font-size: 2rem;
+    background-color: var(--nav-background);
+    color: var(--yellow);
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+footer{
+    grid-area: f;
+    background-color: var(--nav-background);
+    display: flex;
+    justify-content: center;
+}
+
+footer p{
+    font-size: 2rem;
+    color: var(--yellow)
+}
+
+.save-del {
+    display:flex;
+    justify-content: flex-end;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    .container {
+        display: grind;
+        grid-template-rows: 5rem 8rem 1fr 5rem;
+        grid-template-areas:
+        'h h'
+        's s'
+        'm m'
+        'f f'
     }
-}
 
-@media (min-width: 851px) {
-    .slidernotes {
-        display: flexbox;
-        grid-area: s;
-        align-self: start;
-        justify-self: center;
-        list-style-type: none;
+    .side {
+        display: flex;
+        justify-content: center;
     }
-}
 
+    .note-area {
+        max-width: 100vw;
+    }
+
+    .save-del{
+        justify-content: center;
+    }
+
+}
