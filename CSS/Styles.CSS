@@ -72,8 +72,7 @@ li {
     display:flexbox;
     margin:10px;
     max-width: 500px;
-    grid-area: m;
-    place-self: center;
+    grid-area: b;
 }
 
 .textinput{
@@ -82,7 +81,6 @@ li {
     font-size: 10px;
     background-color: var(--blue);
     caret-color: var(--nav-background);
-    place-self: center;
 }
 
 button {
