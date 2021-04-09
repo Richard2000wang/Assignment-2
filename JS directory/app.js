@@ -1,3 +1,16 @@
+const lightchange = document.getElementById("light");
+
+lightchange.onclick = function () {
+    if (lightchange.innerText == "Dark Mode") {
+        lightchange.innerText = "Light Mode";
+        document.body.style.backgroundcolor = "#232136";
+    }else {
+        lightchange.innerText = "Dark Mode";
+        document.body.style.backgroundcolor = "#e0def4";
+    }
+}
+
+
 /* function to add save notes in an array */
     /*on event click of button, create array*/
     /*take in user input via events, google how to exactly do this*/
