@@ -3,10 +3,13 @@ const lightchange = document.getElementById("light");
 lightchange.onclick = function () {
     if (lightchange.innerText == "Dark Mode") {
         lightchange.innerText = "Light Mode";
-        document.body.style.backgroundcolor = "#232136";
     }else {
         lightchange.innerText = "Dark Mode";
-        document.body.style.backgroundcolor = "#e0def4";
+    }
+    if (lightchange.innerText == "Dark Mode") {
+        document.body.style.background = "#e0def4";
+    }else {
+        document.body.style.background = "#232136";
     }
 }
 
