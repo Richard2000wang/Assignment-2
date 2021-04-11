@@ -13,6 +13,38 @@ lightchange.onclick = function () {
     }
 }
 
+light.onclick = function() {
+    if (light.innerText == "Light mode") {
+        light.innerText = "Dark mode";
+    } else {
+        light.innerText = "Light mode";
+    }
+    if (light.innerText== "Light mode") {
+        document.body.style.background = "Purple";
+    } else {document.body.style.background = "White";}
+}
+
+
+const notesArray = []
+
+function defineNoteWritingSection () {
+    html = `
+    <div id="note-area">
+        <div id="note" contenteditable="true"></div>
+        <button onclick="saveNote()">save</button>
+        <button onclick="cleanUp()">cancel</button>
+    </div>
+    `
+    return html
+}
+
+notes.onclick = function createContentWritingArea () {
+    const div = document.querySelector('#content')
+    div.insertAdjacentHTML('beforeend', defineNoteWritingSection())
+    setCursor()
+}
+
+
 
 /* function to add save notes in an array */
     /*on event click of button, create array*/
@@ -23,9 +55,3 @@ lightchange.onclick = function () {
 
 /* function to display the note when the note title is clicked */
     /* On event click of button, use Element.insertAdjacentHTML to display note next to the textbox, or wherever appropriate */
-
-/* function of a button to change the color to dark mode on click */
-    /* use Element.insertAdjacentHTML to add classes with different colors for dark mode*/
-    /* replace button with another button that turns it back to light mode on event click */
-    /* Make sure to have appropriate CSS code so the buttons work*/
-    /* Find out if there is a better way than to replace all the classes*/
