@@ -1,17 +1,3 @@
-const lightchange = document.getElementById("light");
-
-lightchange.onclick = function () {
-    if (lightchange.innerText == "Dark Mode") {
-        lightchange.innerText = "Light Mode";
-    }else {
-        lightchange.innerText = "Dark Mode";
-    }
-    if (lightchange.innerText == "Dark Mode") {
-        document.body.style.background = "#e0def4";
-    }else {
-        document.body.style.background = "#232136";
-    }
-}
 
 light.onclick = function() {
     if (light.innerText == "Light mode") {
@@ -20,8 +6,8 @@ light.onclick = function() {
         light.innerText = "Light mode";
     }
     if (light.innerText== "Light mode") {
-        document.body.style.background = "Purple";
-    } else {document.body.style.background = "White";}
+        document.body.style.background = "#232136";
+    } else {document.body.style.background = "#e0def4";}
 }
 
 
