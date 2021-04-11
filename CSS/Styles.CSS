@@ -34,11 +34,15 @@ header {
 }
 
 #main {
-    place-self: center;
     background-color: var(--main);
     width: 100%;
     Height: 100%;
-    place-items: center;
+    text-align:center;
+}
+
+#btns {
+    margin:0 auto;
+    display: inline-block;
 }
 
 .slider {
@@ -80,7 +84,6 @@ li {
     margin:10px;
     max-width: 700px;
     grid-area: b;
-    justify-items: center;
     min-width: 300px;
 }
 
