@@ -33,9 +33,12 @@ header {
     text-align: center;
 }
 
-.main {
+#main {
     place-self: center;
-    background-color: var(--main)
+    background-color: var(--main);
+    width: 100%;
+    Height: 100%;
+    place-items: center;
 }
 
 .slider {

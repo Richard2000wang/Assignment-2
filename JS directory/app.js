@@ -6,9 +6,10 @@ light.onclick = function() {
         light.innerText = "Light mode";
     }
     if (light.innerText== "Light mode") {
-        document.body.style.background = "#232136";
-    } else {document.body.style.background = "#e0def4";}
+        document.getElementById('main').style.background = "#232136";
+    } else {document.getElementById('main').style.background = "#e0def4";}
 }
+
 
 
 const notesArray = []
