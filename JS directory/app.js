@@ -44,7 +44,49 @@ notes.onclick = function createContentWritingArea () {
     setCursor()
 }
 
+function setCursor () {
+    const div = document.querySelector('#note')
+    div.focus
+}
 
+function saveNote() {
+    const div = document.querySelector("#note")
+    const title = div.firstChild.textContent
+    const body = convertDivsToString()
+    notesArray.push(createNote(title, "body"))
+    console.log(notesArray)
+}
+
+function createNote(title, body) {
+    return {title, body}
+}
+
+function convertDivsToString () {
+    let str = ""
+    const divs = [...document.querySelectorAll('[contenteditable]')]    
+    for (const i of divs) {
+        str += `${i.textContent}\n`
+    }
+    return str
+}
+
+function cleanUp () {
+    const div = document.querySelector('#note-area')
+    div.remove()
+} 
+
+function saveTextArea () {
+    const note = document.querySelector('textarea').value
+    console.log(note)
+    const notesarr = note.split('\n\n')
+    notesArray.push(createNoteobject(notearr))
+    document.querySelector('textarea').value =""
+    console.log(notesArray)
+}
+
+function createNoteobject(arr) {
+    return newobject= { title: arr[0], body: arr[1]}
+}   
 
 /* function to add save notes in an array */
     /*on event click of button, create array*/
