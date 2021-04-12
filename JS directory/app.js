@@ -10,8 +10,6 @@ light.onclick = function() {
     } else {document.getElementById('main').style.background = "#e0def4";}
 }
 
-
-
 const notesArray = []
 
 function defineNoteWritingSection () {
@@ -40,7 +38,7 @@ function saveNote() {
     const div = document.querySelector("#note")
     const title = div.firstChild.textContent
     const body = convertDivsToString()
-    notesArray.push(createNote(title, "body"))
+    notesArray.push(createNote(title, body))
     console.log(notesArray)
 }
 
@@ -50,7 +48,7 @@ function createNote(title, body) {
 
 function convertDivsToString () {
     let str = ""
-    const divs = [...document.querySelectorAll('[contenteditable]')]    
+    const divs = [...document.querySelectorAll('[contenteditable] > div')]    
     for (const i of divs) {
         str += `${i.textContent}\n`
     }
@@ -75,12 +73,3 @@ function createNoteobject(arr) {
     return newobject= { title: arr[0], body: arr[1]}
 }   
 
-/* function to add save notes in an array */
-    /*on event click of button, create array*/
-    /*take in user input via events, google how to exactly do this*/
-    /*place user input into the array*/
-    /*remove textbox, save button and go back to the new note button*/
-    /*if user presses save again, go back to step one*/
-
-/* function to display the note when the note title is clicked */
-    /* On event click of button, use Element.insertAdjacentHTML to display note next to the textbox, or wherever appropriate */
