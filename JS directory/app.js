@@ -2,12 +2,11 @@
 light.onclick = function() {
     if (light.innerText == "Light mode") {
         light.innerText = "Dark mode";
+        document.getElementById('main').style.background = "#e0def4";
     } else {
         light.innerText = "Light mode";
-    }
-    if (light.innerText== "Light mode") {
         document.getElementById('main').style.background = "#232136";
-    } else {document.getElementById('main').style.background = "#e0def4";}
+    }
 }
 
 const notesArray = []
@@ -40,6 +39,7 @@ function saveNote() {
     const body = convertDivsToString()
     notesArray.push(createNote(title, body))
     console.log(notesArray)
+    updateSidebar()
 }
 
 function createNote(title, body) {
@@ -66,10 +66,40 @@ function saveTextArea () {
     const notesarr = note.split('\n\n')
     notesArray.push(createNoteobject(notearr))
     document.querySelector('textarea').value =""
-    console.log(notesArray)
+    console.log(notesArray)  //TODO remember to remove the notes and stuffs
 }
 
 function createNoteobject(arr) {
     return newobject= { title: arr[0], body: arr[1]}
 }   
 
+function updateSidebar () {
+    let nlist = document.getElementById('notes-list')
+    nlist.innerHTML=""
+    for (const n of notesArray) {
+        let li = document.createElement("li")
+        li.textContent = n.title
+        li.onclick = function () {
+            displayNote(n)
+        }
+        nlist.appendChild(li)
+    }
+}
+
+function displayNote(note) {
+    let textarea = document.getElementById('note-display-body')
+    let texttitle = document.getElementById('note-display-title')
+    texttitle.innerHTML = note.title
+    textarea.innerHTML = note.body.replaceAll('\n','<br>') 
+    let parent = document.getElementById('note-display')
+    parent.hidden = false
+}
+
+function closeNote () {
+    let textarea = document.getElementById('note-display-body')
+    let texttitle = document.getElementById('note-display-title')
+    texttitle.innerHTML = ""
+    textarea.innerHTML = ""
+    let parent = document.getElementById('note-display')
+    parent.hidden = true
+}
