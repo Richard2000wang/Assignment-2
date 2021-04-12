@@ -124,7 +124,19 @@ footer p{
     justify-content: flex-end;
 }
 
+[contenteditable], #note-display-title {
+    font-size: 35px;
+    color: #31748f;
+}
 
+[contenteditable] > div, #note-display-body {
+    font-size: 25px;
+    color: #1f1d2e;
+}
+
+[contenteditable]:focus {
+    outline: none;
+}
 
 @media screen and (max-width: 600px) {
 

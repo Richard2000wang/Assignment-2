@@ -19,13 +19,20 @@
             </nav>
         </header>
         <nav class = "slider">
-            <button id=slide>>></button>
+            <h1>Notes</h1>
+            <ul id= "notes-list">
+            </ul>
         </nav>
         <div id = "main">
             <div id = "btns">
                 <button id ="light">Dark mode</button>
                 <button id="notes">+ New notes</button>
                 <div id="content"></div>
+                <div hidden id="note-display">
+                    <div id="note-display-title"></div>
+                    <div id="note-display-body"></div>
+                    <button id="note-display-close" onclick = "closeNote()">Close Note</button>
+                </div>
             </div>
         </div>
         <footer>
